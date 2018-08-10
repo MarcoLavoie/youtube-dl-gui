@@ -39,7 +39,7 @@ namespace Youtube_dl_gui
 
 			if (string.IsNullOrEmpty(videoURL.Text))
 			{
-				System.Windows.Forms.MessageBox.Show("Entre l'URL de la vidéo sousplais", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				System.Windows.Forms.MessageBox.Show("Entrez l'URL de la vidéo à convertir", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
@@ -51,7 +51,7 @@ namespace Youtube_dl_gui
 		{
 			if (string.IsNullOrEmpty(url))
 			{
-				System.Windows.Forms.MessageBox.Show("Entre l'URL de la vidéo sousplais", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				System.Windows.Forms.MessageBox.Show("Entrez l'URL de la vidéo à convertir", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return false;
 			}
 			else
