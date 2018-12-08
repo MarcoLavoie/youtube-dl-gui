@@ -5,9 +5,13 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:Youtube_dl_gui"
 		mc:Ignorable="d"
-		Title="Convertisseur de vidéo en mp3 pour Mégan" Height="355.909" Width="573.636" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" Background="#FFFBFAFA">
+		Title="Convertisseur vidéo vers MP3" Height="355.909" Width="573.636" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" Background="#FFFBFAFA">
 	<Grid Margin="0,0,4,0">
-		<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="35*"/>
+			<ColumnDefinition Width="59*"/>
+		</Grid.ColumnDefinitions>
+		<Grid Grid.ColumnSpan="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="90*"/>
 				<ColumnDefinition Width="60*"/>
@@ -21,7 +25,7 @@
 			<TextBox x:Name="videoURL" HorizontalAlignment="Left" Height="20" Margin="23,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" Grid.ColumnSpan="2"/>
 			<Button Content="Convertir" HorizontalAlignment="Left" Margin="7,59,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="2" Grid.ColumnSpan="1"/>
 		</Grid>
-		<GroupBox Header="Répertoire de destination" HorizontalAlignment="Left" Height="115" Margin="23,115,0,0" VerticalAlignment="Top" Width="507" Panel.ZIndex="-1" Foreground="#FF060000">
+		<GroupBox Header="Répertoire de destination" HorizontalAlignment="Left" Height="115" Margin="23,115,0,0" VerticalAlignment="Top" Width="507" Panel.ZIndex="-1" Foreground="#FF060000" Grid.ColumnSpan="2">
 			<Grid VerticalAlignment="Top" HorizontalAlignment="Left" Width="467" Height="100" Margin="0,0,0,-7">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition />

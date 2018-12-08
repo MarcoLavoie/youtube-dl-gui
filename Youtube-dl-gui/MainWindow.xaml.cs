@@ -1,22 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 using System.Diagnostics;
-using Microsoft.Win32;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace Youtube_dl_gui
 {
@@ -31,6 +17,7 @@ namespace Youtube_dl_gui
 		{
 			InitializeComponent();
 			OutputDirectoryText.Text = OutputDirectory;
+			UpdateYoutubeDL();
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,6 +31,27 @@ namespace Youtube_dl_gui
 			else
 			{
 				RunConvert(videoURL.Text);
+			}
+		}
+
+		private void UpdateYoutubeDL()
+		{
+			var cmd = new ProcessStartInfo();
+			cmd.FileName = $@"youtube-dl.exe";
+			cmd.Arguments = $@"--update";
+			cmd.RedirectStandardInput = true;
+			cmd.RedirectStandardOutput = true;
+			cmd.CreateNoWindow = true;
+			cmd.UseShellExecute = false;
+			cmd.WindowStyle = ProcessWindowStyle.Hidden;
+
+			try
+			{
+				Process.Start(cmd);
+			}
+			catch (Exception)
+			{
+
 			}
 		}
 
@@ -69,7 +77,8 @@ namespace Youtube_dl_gui
 				{
 					Process.Start(cmd);
 					return true;
-				} catch
+				}
+				catch
 				{
 					return false;
 				}
@@ -78,7 +87,7 @@ namespace Youtube_dl_gui
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
-			System.Diagnostics.Process.Start(OutputDirectory);
+			Process.Start(OutputDirectory);
 		}
 
 		private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -96,7 +105,6 @@ namespace Youtube_dl_gui
 					OutputDirectoryText.Text = OutputDirectory;
 				}
 			}
-
 		}
 	}
 }
